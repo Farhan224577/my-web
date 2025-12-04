@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
-    <title data-lang-key="meta.title">Farhan Nosrati | Senior Frontend Engineer</title>
-    <meta name="description" data-lang-key="meta.description" content="The professional portfolio of Farhan Nosrati, a Senior Frontend Engineer.">
+    <title data-lang-key="meta.title">فرحان نصرتی | توسعه‌دهنده ارشد فرانت‌اند</title>
+    <meta name="description" data-lang-key="meta.description" content="پورتفولیوی حرفه‌ای فرحان نصرتی، توسعه‌دهنده ارشد فرانت‌اند.">
 </head>
 <body>
 
@@ -14,15 +13,15 @@
     <header class="header">
         <nav class="nav container">
             <div class="navLinks">
-                <a href="#about" data-lang-key="nav.about">About</a>
-                <a href="#skills" data-lang-key="nav.skills">Skills</a>
-                <a href="#experience" data-lang-key="nav.experience">Experience</a>
-                <a href="#contact" data-lang-key="nav.contact">Contact</a>
+                <a href="#about" data-lang-key="nav.about">درباره من</a>
+                <a href="#skills" data-lang-key="nav.skills">مهارت‌ها</a>
+                <a href="#experience" data-lang-key="nav.experience">سوابق شغلی</a>
+                <a href="#contact" data-lang-key="nav.contact">تماس</a>
             </div>
             <div class="navActions">
                 <select id="lang-switcher" class="switch">
-                    <option value="en">English</option>
                     <option value="fa">فارسی</option>
+                    <option value="en">English</option>
                 </select>
                 <button id="theme-switcher" class="switch">🌙</button>
             </div>
@@ -32,36 +31,36 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <h1 data-lang-key="hero.title">Hi, I'm Farhan Nosrati</h1>
-            <h2 data-lang-key="hero.subtitle">Senior Frontend Engineer</h2>
+            <h1 data-lang-key="hero.title">سلام، من فرهان نصرتی هستم</h1>
+            <h2 data-lang-key="hero.subtitle">توسعه‌دهنده ارشد فرانت‌اند</h2>
             <p data-lang-key="hero.description">React • Next.js • TypeScript</p>
-            <a href="https://github.com/Farhan224577" target="_blank" rel="noopener noreferrer" data-lang-key="hero.github">View GitHub</a>
+            <a href="https://github.com/Farhan224577" target="_blank" rel="noopener noreferrer" data-lang-key="hero.github">مشاهده گیت‌هاب</a>
         </section>
 
         <!-- About Section -->
         <section id="about" class="container">
-            <h2 class="sectionTitle" data-lang-key="about.title">Professional Summary</h2>
-            <div class="card aboutContent">
+            <h2 class="sectionTitle hidden" data-lang-key="about.title">خلاصه حرفه‌ای</h2>
+            <div class="card aboutContent hidden">
                 <div class="aboutImage">
-                    <img src="images/profile.jpeg" alt="Farhan Nosrati Profile Picture" />
+                    <img src="images/profile.jpg" alt="Farhan Nosrati Profile Picture" />
                 </div>
                 <div class="aboutText">
-                    <p data-lang-key="about.text">Loading...</p>
+                    <p data-lang-key="about.text">...درحال بارگذاری</p>
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
         <section id="skills" class="container">
-            <h2 class="sectionTitle" data-lang-key="skills.title">Core Technical Skills</h2>
-            <div class="card skills-content">
+            <h2 class="sectionTitle hidden" data-lang-key="skills.title">مهارت‌های فنی اصلی</h2>
+            <div class="card skills-content hidden">
                 <!-- Skills will be dynamically injected by script.js -->
             </div>
         </section>
 
         <!-- Experience Section -->
         <section id="experience" class="container">
-            <h2 class="sectionTitle" data-lang-key="experience.title">Professional Experience</h2>
+            <h2 class="sectionTitle hidden" data-lang-key="experience.title">سوابق شغلی</h2>
             <div class="experience-content">
                  <!-- Experience will be dynamically injected by script.js -->
             </div>
@@ -69,20 +68,28 @@
 
         <!-- Contact Section -->
         <section id="contact" class="container" style="text-align: center;">
-            <h2 class="sectionTitle" data-lang-key="contact.title">Get In Touch</h2>
-            <div class="card">
-                <a href="mailto:Nosratidevelopments@gmail.com" class="button-link" data-lang-key="contact.email">Email Me</a>
-                <a href="https://github.com/Farhan224577" target="_blank" rel="noopener noreferrer" class="button-link" data-lang-key="contact.github">My GitHub</a>
+            <h2 class="sectionTitle hidden" data-lang-key="contact.title">ارتباط با من</h2>
+            <div class="card hidden">
+                <a href="mailto:Nosratidevelopments@gmail.com" class="button-link" data-lang-key="contact.email">ارسال ایمیل</a>
+                <a href="https://github.com/Farhan224577" target="_blank" rel="noopener noreferrer" class="button-link" data-lang-key="contact.github">گیت‌هاب من</a>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p data-lang-key="footer.text">© 2024 Farhan Nosrati. All Rights Reserved.</p>
+        <p data-lang-key="footer.text">© 2025 فرحان نصرتی. تمام حقوق محفوظ است.</p>
     </footer>
+
+    <!-- Template for Experience Items -->
+    <template id="experience-template">
+        <div class="card experienceItem hidden">
+            <h3 class="experience-role"></h3>
+            <span class="experience-details"></span>
+            <ul class="experience-points"></ul>
+        </div>
+    </template>
 
     <script src="script.js"></script>
 </body>
 </html>
-
