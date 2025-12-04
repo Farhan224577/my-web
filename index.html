@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title data-lang-key="meta.title">Farhan Nosrati | Senior Frontend Engineer</title>
+    <meta name="description" data-lang-key="meta.description" content="The professional portfolio of Farhan Nosrati, a Senior Frontend Engineer.">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="navLinks">
+                <a href="#about" data-lang-key="nav.about">About</a>
+                <a href="#skills" data-lang-key="nav.skills">Skills</a>
+                <a href="#experience" data-lang-key="nav.experience">Experience</a>
+                <a href="#contact" data-lang-key="nav.contact">Contact</a>
+            </div>
+            <div class="navActions">
+                <select id="lang-switcher" class="switch">
+                    <option value="en">English</option>
+                    <option value="fa">فارسی</option>
+                </select>
+                <button id="theme-switcher" class="switch">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 data-lang-key="hero.title">Hi, I'm Farhan Nosrati</h1>
+            <h2 data-lang-key="hero.subtitle">Senior Frontend Engineer</h2>
+            <p data-lang-key="hero.description">React • Next.js • TypeScript</p>
+            <a href="https://github.com/Farhan224577" target="_blank" rel="noopener noreferrer" data-lang-key="hero.github">View GitHub</a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container">
+            <h2 class="sectionTitle" data-lang-key="about.title">Professional Summary</h2>
+            <div class="card aboutContent">
+                <div class="aboutImage">
+                    <img src="images/profile.jpg" alt="Farhan Nosrati Profile Picture" />
+                </div>
+                <div class="aboutText">
+                    <p data-lang-key="about.text">Loading...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="container">
+            <h2 class="sectionTitle" data-lang-key="skills.title">Core Technical Skills</h2>
+            <div class="card skills-content">
+                <!-- Skills will be dynamically injected by script.js -->
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="container">
+            <h2 class="sectionTitle" data-lang-key="experience.title">Professional Experience</h2>
+            <div class="experience-content">
+                 <!-- Experience will be dynamically injected by script.js -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container" style="text-align: center;">
+            <h2 class="sectionTitle" data-lang-key="contact.title">Get In Touch</h2>
+            <div class="card">
+                <a href="mailto:Nosratidevelopments@gmail.com" class="button-link" data-lang-key="contact.email">Email Me</a>
+                <a href="https://github.com/Farhan224577" target="_blank" rel="noopener noreferrer" class="button-link" data-lang-key="contact.github">My GitHub</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p data-lang-key="footer.text">© 2024 Farhan Nosrati. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
