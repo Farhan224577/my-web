@@ -1,67 +1,372 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title data-lang-key="meta.title">فرحان نصرتی | توسعه‌دهنده ارشد فرانت‌اند</title>
-    <meta name="description" data-lang-key="meta.description" content="پورتفولیوی حرفه‌ای فرحان نصرتی، توسعه‌دهنده ارشد فرانت‌اند.">
+    <title>Farhan Nosrati - Senior Frontend Engineer</title>
+    <style>
+        /* General Styles & Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        :root {
+            --bg-color: #0a192f;
+            --text-color: #ccd6f6;
+            --highlight-color: #64ffda;
+            --card-bg: #112240;
+            --border-color: #233554;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1, h2 {
+            color: #e6f1ff;
+            font-weight: 600;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: white;
+        }
+
+        /* Header & Language Switcher */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .lang-switcher {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .lang-switcher:hover {
+            background-color: var(--border-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            min-height: 70vh;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .hero-img-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--highlight-color);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 25px rgba(100, 255, 218, 0.5);
+            position: relative;
+        }
+
+        .hero-img-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: conic-gradient(from 0deg, transparent 70%, var(--highlight-color), transparent 80%);
+            animation: rotate 6s linear infinite;
+            transform-origin: center center;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin: 0;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--highlight-color);
+            margin-top: 0.5rem;
+        }
+        
+        .hero .summary {
+            max-width: 600px;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .social-links a {
+            margin: 0 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .skill-category {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .skill-category h3 {
+            margin-top: 0;
+            color: var(--highlight-color);
+        }
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skill-category li {
+            padding: 4px 0;
+        }
+
+        /* Blog Section */
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .post {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+        .post:hover {
+            transform: translateY(-5px);
+        }
+        .post h3 {
+            margin-top: 0;
+            color: var(--text-color);
+        }
+        .post a {
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+    </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <div class="navLinks">
-                <a href="#about" data-lang-key="nav.about">درباره من</a>
-                <a href="#skills" data-lang-key="nav.skills">مهارت‌ها</a>
-                <a href="#experience" data-lang-key="nav.experience">سوابق شغلی</a>
-                <a href="#posts" data-lang-key="nav.posts">پست‌ها</a>
-                <a href="#contact" data-lang-key="nav.contact">تماس</a>
-            </div>
-            <div class="navActions">
-                <select id="lang-switcher" class="switch">
-                    <option value="fa">فارسی</option>
-                    <option value="en">English</option>
-                    <option value="ar">العربية</option>
-                </select>
-                <button id="theme-switcher" class="switch">🌙</button>
-            </div>
-        </nav>
-    </header>
+    <div id="root"></div>
 
-    <main>
-        <!-- ... (بخش‌های Hero, About, Skills, Experience بدون تغییر باقی می‌مانند) ... -->
-        
-        <!-- Posts Section -->
-        <section id="posts" class="container">
-            <h2 class="sectionTitle hidden" data-lang-key="posts.title">آخرین پست‌ها</h2>
-            <div class="posts-content">
-                 <!-- Posts will be dynamically injected by script.js -->
-            </div>
-        </section>
+    <script>
+        const content = {
+            en: {
+                langButton: "مشاهده به فارسی",
+                name: "Farhan Nosrati",
+                title: "Senior Frontend Engineer • React • Next.js",
+                summary: "Senior Frontend Engineer with strong expertise in React, Next.js, and modern JavaScript/TypeScript ecosystems. Skilled in translating product requirements into optimized user experiences.",
+                email: "Nosratidevelopments@gmail.com",
+                github: "github.com/Farhan224577",
+                sections: {
+                    skills: "Core Technical Skills",
+                    blog: "Recent Articles"
+                },
+                skills: {
+                    languages: "Languages",
+                    languages_list: "JavaScript (ES6+), TypeScript, HTML5, CSS3",
+                    frontend: "Frontend",
+                    frontend_list: "React, Next.js, Redux Toolkit, Context API",
+                    styling: "UI / Styling",
+                    styling_list: "Tailwind CSS, Styled Components, Sass",
+                    architecture: "Architecture",
+                    architecture_list: "Component-driven development, Modular design"
+                },
+                blog: [
+                    {
+                        title: "The Power of Component-Driven Development",
+                        description: "Building UIs from the bottom up, starting with individual components, allows for more reusable, testable, and scalable applications. Tools like Storybook are essential in this workflow.",
+                        linkText: "Read more"
+                    },
+                    {
+                        title: "Optimizing React App Performance with React Query",
+                        description: "React Query simplifies server-state management by providing hooks for fetching, caching, and updating asynchronous data, leading to cleaner code and improved performance.",
+                        linkText: "Read more"
+                    }
+                ],
+                footer: `Built with ❤️ by Farhan Nosrati. Inspired by modern web trends.`
+            },
+            fa: {
+                langButton: "View in English",
+                name: "فرهان نصرتی",
+                title: "توسعه‌دهنده ارشد فرانت‌اند • React • Next.js",
+                summary: "توسعه‌دهنده ارشد فرانت‌اند با تخصص قوی در اکوسیستم‌های React، Next.js و JavaScript/TypeScript مدرن. ماهر در تبدیل نیازمندی‌های محصول به تجربه‌های کاربری بهینه.",
+                email: "Nosratidevelopments@gmail.com",
+                github: "github.com/Farhan224577",
+                sections: {
+                    skills: "مهارت‌های فنی اصلی",
+                    blog: "مقالات اخیر"
+                },
+                skills: {
+                    languages: "زبان‌ها",
+                    languages_list: "JavaScript (ES6+), TypeScript, HTML5, CSS3",
+                    frontend: "فرانت‌اند",
+                    frontend_list: "React, Next.js, Redux Toolkit, Context API",
+                    styling: "UI / استایل‌دهی",
+                    styling_list: "Tailwind CSS, Styled Components, Sass",
+                    architecture: "معماری",
+                    architecture_list: "توسعه کامپوننت-محور, طراحی ماژولار"
+                },
+                blog: [
+                    {
+                        title: "قدرت توسعه کامپوننت-محور",
+                        description: "ساخت رابط‌های کاربری به صورت پایین به بالا و با شروع از کامپوننت‌های مجزا، امکان ایجاد برنامه‌هایی با قابلیت استفاده مجدد، تست‌پذیری و مقیاس‌پذیری بالاتر را فراهم می‌کند.",
+                        linkText: "بیشتر بخوانید"
+                    },
+                    {
+                        title: "بهینه‌سازی عملکرد برنامه‌های ری‌اکت با React Query",
+                        description: "React Query مدیریت وضعیت سرور را با فراهم کردن هوک‌هایی برای واکشی، کش کردن و به‌روزرسانی داده‌ها ساده می‌کند و به کدی تمیزتر و عملکردی بهتر منجر می‌شود.",
+                        linkText: "بیشتر بخوانید"
+                    }
+                ],
+                footer: "طراحی و ساخته شده با ❤️ توسط فرهان نصرتی."
+            }
+        };
 
-        <!-- ... (بخش Contact و Footer بدون تغییر باقی می‌مانند) ... -->
-    </main>
+        let currentLang = 'en'; // Default language
 
-    <!-- Template for Experience Items -->
-    <template id="experience-template">
-        <div class="card experienceItem hidden">
-            <h3 class="experience-role"></h3>
-            <span class="experience-details"></span>
-            <ul class="experience-points"></ul>
-        </div>
-    </template>
-    
-    <!-- Template for Post Items -->
-    <template id="post-template">
-        <div class="card postItem hidden">
-            <h3 class="post-title"></h3>
-            <p class="post-description"></p>
-            <a href="#" class="read-more" data-lang-key="posts.readMore">بیشتر بخوانید</a>
-        </div>
-    </template>
+        function render() {
+            const lang = content[currentLang];
+            const root = document.getElementById('root');
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'fa' ? 'rtl' : 'ltr';
 
-    <script src="script.js"></script>
+            root.innerHTML = `
+                <header class="header">
+                    <div class="logo">FN</div>
+                    <button class="lang-switcher" onclick="toggleLanguage()">${lang.langButton}</button>
+                </header>
+
+                <main class="container">
+                    <section class="hero">
+                        <div class="hero-img-container">
+                             <img src="profile.jpeg" alt="${lang.name}">
+                        </div>
+                        <h1>${lang.name}</h1>
+                        <p class="subtitle">${lang.title}</p>
+                        <p class="summary">${lang.summary}</p>
+                        <div class="social-links">
+                            <a href="mailto:${lang.email}">Email</a>
+                            <span>/</span>
+                            <a href="https://${lang.github}" target="_blank">GitHub</a>
+                        </div>
+                    </section>
+
+                    <section id="skills">
+                        <h2>${lang.sections.skills}</h2>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h3>${lang.skills.languages}</h3>
+                                <p>${lang.skills.languages_list}</p>
+                            </div>
+                            <div class="skill-category">
+                                <h3>${lang.skills.frontend}</h3>
+                                <p>${lang.skills.frontend_list}</p>
+                            </div>
+                            <div class="skill-category">
+                                <h3>${lang.skills.styling}</h3>
+                                <p>${lang.skills.styling_list}</p>
+                            </div>
+                            <div class="skill-category">
+                                <h3>${lang.skills.architecture}</h3>
+                                <p>${lang.skills.architecture_list}</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="blog">
+                        <h2>${lang.sections.blog}</h2>
+                        <div class="blog-posts">
+                            ${lang.blog.map(post => `
+                                <div class="post">
+                                    <h3>${post.title}</h3>
+                                    <p>${post.description}</p>
+                                    <a href="#">${post.linkText}</a>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </section>
+                </main>
+                
+                <footer class="footer">
+                    <p>${lang.footer}</p>
+                </footer>
+            `;
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'fa' : 'en';
+            render();
+        }
+
+        // Initial render
+        render();
+    </script>
+
 </body>
 </html>
